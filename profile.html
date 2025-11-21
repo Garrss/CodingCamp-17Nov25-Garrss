@@ -13,17 +13,31 @@
   </head>
 
   <body class="bg-gray-50 text-gray-900">
-    <!-- Header Content -->
-    <header id="navbar"></header>
+    <!-- NAVBAR -->
+    <nav class="bg-white shadow p-4 fixed top-0 left-0 w-full z-50">
+      <div class="max-w-6xl mx-auto flex justify-between items-center">
+        <h1 class="text-xl font-bold">MyPortfolio</h1>
+
+        <div class="space-x-6 font-medium">
+          <a href="index.html" class="hover:text-blue-600">Home</a>
+          <a href="profile.html" class="hover:text-blue-600">Our Profile</a>
+          <a href="portofolio.html" class="hover:text-blue-600">Portfolio</a>
+          <a href="message.html" class="hover:text-blue-600">Message Us</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Spacer so content isn't hidden behind fixed navbar -->
+    <div class="h-20"></div>
 
     <hr />
 
-    <!-- Main Content -->
+    <!-- MAIN CONTENT -->
     <main class="p-6 space-y-10">
       <!-- Banner Photo -->
       <section
         id="banner"
-        class="w-full h-60 bg-gray-300 flex items-center justify-center">
+        class="w-full h-60 bg-gray-300 flex items-center justify-center rounded">
         <h2 class="text-2xl font-bold">Company Banner</h2>
       </section>
 
@@ -44,21 +58,25 @@
       <!-- Vision & Mission -->
       <section id="vision-mission" class="space-y-4">
         <h3 class="text-xl font-semibold">Vision & Mission</h3>
+
         <p>
           <strong>Vision:</strong> To be a leading company in delivering quality
           solutions globally.
         </p>
+
         <p><strong>Mission:</strong></p>
         <ul class="list-disc pl-6">
-          <li>Provide high‑quality and innovative services.</li>
+          <li>Provide high-quality and innovative services.</li>
           <li>Ensure customer satisfaction in every project.</li>
           <li>Grow sustainably with integrity and professionalism.</li>
         </ul>
       </section>
     </main>
 
-    <!-- Footer Content -->
-    <footer id="footer"></footer>
+    <!-- FOOTER -->
+    <footer class="bg-white p-4 text-center shadow mt-10">
+      <p class="text-sm">© 2025 My Portfolio Website</p>
+    </footer>
 
     <!-- JS External -->
     <script src="js/script.js"></script>

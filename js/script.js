@@ -1,53 +1,13 @@
-// ===============================
-// Reusable Navbar & Footer
-// ===============================
-
 document.addEventListener("DOMContentLoaded", () => {
-  // Navbar Template
-  const navbar = `
-    <div class="flex justify-between items-center p-4 bg-white shadow">
-      <h1 class="text-xl font-bold">MyPortfolio</h1>
-      <nav class="space-x-4">
-        <a href="index.html" class="hover:text-blue-600">Home</a>
-        <a href="profile.html" class="hover:text-blue-600">Our Profile</a>
-        <a href="portofolio.html" class="hover:text-blue-600">Portfolio</a>
-        <a href="message.html" class="hover:text-blue-600">Message Us</a>
-      </nav>
-    </div>
-  `;
-
-  // Footer Template
-  const footer = `
-    <div class="text-center p-4 bg-white shadow mt-10">
-      <p class="text-sm">© 2025 My Portfolio Website</p>
-    </div>
-  `;
-
-  // Inject to HTML
-  if (document.getElementById("navbar")) {
-    document.getElementById("navbar").innerHTML = navbar;
-  }
-  if (document.getElementById("footer")) {
-    document.getElementById("footer").innerHTML = footer;
-  }
-
-  // ===============================
-  // Greeting on Home Page
-  // ===============================
-
+  // =============================== Greeting ===============================
   const userNameSpan = document.getElementById("userName");
-
   if (userNameSpan) {
     let name = prompt("Enter your name:");
     if (!name || name.trim() === "") name = "Guest";
-
     userNameSpan.textContent = name;
   }
 
-  // ===============================
-  // Message Form Validation
-  // ===============================
-
+  // =============================== Message Form Validation ===============================
   const form = document.getElementById("messageForm");
   if (form) {
     form.addEventListener("submit", (e) => {
@@ -59,39 +19,71 @@ document.addEventListener("DOMContentLoaded", () => {
 
       let valid = true;
 
-      // Reset error messages
       document.getElementById("name-error").classList.add("hidden");
       document.getElementById("email-error").classList.add("hidden");
       document.getElementById("message-error").classList.add("hidden");
 
-      // Validate Name
       if (name === "") {
         document.getElementById("name-error").classList.remove("hidden");
         valid = false;
       }
 
-      // Validate Email
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(email)) {
         document.getElementById("email-error").classList.remove("hidden");
         valid = false;
       }
 
-      // Validate Message
       if (message === "") {
         document.getElementById("message-error").classList.remove("hidden");
         valid = false;
       }
 
-      // If valid, show submitted data
       if (valid) {
         document.getElementById("submittedData").classList.remove("hidden");
         document.getElementById("outputName").textContent = name;
         document.getElementById("outputEmail").textContent = email;
         document.getElementById("outputMessage").textContent = message;
-
         form.reset();
       }
     });
+  }
+
+  // =============================== DARK MODE TOGGLE ===============================
+  const themeToggle = document.getElementById("themeToggle");
+  const htmlElement = document.documentElement;
+
+  if (themeToggle) {
+    // Check saved theme or system preference
+    function initTheme() {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) {
+        htmlElement.classList.toggle("dark", savedTheme === "dark");
+      } else {
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        htmlElement.classList.toggle("dark", prefersDark);
+      }
+      updateToggleButton();
+    }
+
+    // Update button text based on theme
+    function updateToggleButton() {
+      themeToggle.textContent = htmlElement.classList.contains("dark")
+        ? "🌙"
+        : "☀️";
+    }
+
+    // Toggle theme on button click
+    themeToggle.addEventListener("click", () => {
+      htmlElement.classList.toggle("dark");
+      const isDark = htmlElement.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+      updateToggleButton();
+    });
+
+    // Initialize theme on page load
+    initTheme();
   }
 });
