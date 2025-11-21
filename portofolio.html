@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <title>Portfolio - MyPortfolio</title>
 
     <!-- Tailwind Output -->
     <link rel="stylesheet" href="dist/output.css" />
@@ -16,9 +16,30 @@
     <nav
       class="bg-white dark:bg-gray-800 shadow p-4 fixed top-0 left-0 w-full z-50 transition-colors duration-300">
       <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <h1 class="text-xl font-bold dark:text-white">MyPortfolio</h1>
+        <h1 class="text-lg md:text-xl font-bold dark:text-white">
+          MyPortfolio
+        </h1>
 
-        <div class="flex items-center space-x-6 font-medium">
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobileMenuButton"
+          class="md:hidden p-2 text-gray-600 dark:text-gray-300">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+
+        <!-- Desktop Navigation -->
+        <div
+          class="hidden md:flex items-center space-x-4 lg:space-x-6 font-medium">
           <a
             href="index.html"
             class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
@@ -40,9 +61,46 @@
             >Message Us</a
           >
 
-          <!-- DARK MODE TOGGLE BUTTON - CLEAN VERSION -->
+          <!-- Dark Mode Toggle -->
           <button
             id="themeToggle"
+            class="p-2 text-xl hover:scale-110 transition-transform duration-200">
+            🌙
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <div
+        id="mobileMenu"
+        class="md:hidden hidden mt-4 space-y-3 bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+        <a
+          href="index.html"
+          class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+          >Home</a
+        >
+        <a
+          href="profile.html"
+          class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+          >Our Profile</a
+        >
+        <a
+          href="portofolio.html"
+          class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+          >Portfolio</a
+        >
+        <a
+          href="message.html"
+          class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+          >Message Us</a
+        >
+
+        <!-- Mobile Dark Mode Toggle -->
+        <div
+          class="flex items-center justify-between pt-2 border-t border-gray-200 dark:border-gray-700">
+          <span class="text-gray-600 dark:text-gray-300">Dark Mode</span>
+          <button
+            id="themeToggleMobile"
             class="p-2 text-xl hover:scale-110 transition-transform duration-200">
             🌙
           </button>
@@ -53,104 +111,391 @@
     <!-- Spacer so content isn't hidden behind fixed navbar -->
     <div class="h-20"></div>
 
-    <hr class="border-gray-300 dark:border-gray-700" />
-
-    <!-- Main Content -->
-    <main class="p-6 space-y-10 max-w-6xl mx-auto">
-      <section id="portfolio-section" class="space-y-6">
-        <h2 class="text-2xl font-bold text-center mb-6 dark:text-white">
+    <!-- MAIN CONTENT -->
+    <main class="p-4 sm:p-6 space-y-10 sm:space-y-12 max-w-7xl mx-auto">
+      <!-- Portfolio Header -->
+      <section class="text-center">
+        <h1
+          class="text-3xl sm:text-4xl md:text-5xl font-bold dark:text-white mb-4">
           My Portfolio
-        </h2>
+        </h1>
+        <p
+          class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          Explore my latest projects and creative works. Each project represents
+          a unique challenge and innovative solution.
+        </p>
+      </section>
 
-        <!-- Portfolio Grid -->
-        <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          <!-- Item 1 -->
-          <div
-            class="bg-white dark:bg-gray-800 shadow p-4 rounded-lg transition-colors duration-300 hover:shadow-lg">
+      <!-- Portfolio Filter -->
+      <section class="flex justify-center">
+        <div class="flex flex-wrap gap-2 sm:gap-4 justify-center">
+          <button
+            class="px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-medium transition-colors duration-200">
+            All Projects
+          </button>
+          <button
+            class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200">
+            Web Design
+          </button>
+          <button
+            class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200">
+            Development
+          </button>
+          <button
+            class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200">
+            Mobile Apps
+          </button>
+          <button
+            class="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200">
+            UI/UX
+          </button>
+        </div>
+      </section>
+
+      <!-- Portfolio Grid -->
+      <section
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <!-- Project 1 -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300">
+          <div class="relative overflow-hidden">
             <div
-              class="h-40 bg-gray-300 dark:bg-gray-600 rounded mb-3 transition-colors duration-300"></div>
-            <h3 class="font-semibold text-lg dark:text-white">
-              Project Title 1
-            </h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
-              Short description of the project goes here.
-            </p>
+              class="h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+              <span class="text-white text-4xl">🌐</span>
+            </div>
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
           </div>
-
-          <!-- Item 2 -->
-          <div
-            class="bg-white dark:bg-gray-800 shadow p-4 rounded-lg transition-colors duration-300 hover:shadow-lg">
-            <div
-              class="h-40 bg-gray-300 dark:bg-gray-600 rounded mb-3 transition-colors duration-300"></div>
-            <h3 class="font-semibold text-lg dark:text-white">
-              Project Title 2
-            </h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
-              Short description of the project goes here.
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-bold text-xl dark:text-white">
+                E-Commerce Platform
+              </h3>
+              <span
+                class="text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full"
+                >Web Dev</span
+              >
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+              A modern e-commerce solution with responsive design, secure
+              payments, and admin dashboard.
             </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded"
+                >React</span
+              >
+              <span
+                class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded"
+                >Node.js</span
+              >
+              <span
+                class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded"
+                >MongoDB</span
+              >
+            </div>
+            <div class="flex space-x-3">
+              <a
+                href="#"
+                class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 text-sm font-medium transition-colors duration-200"
+                >Live Demo</a
+              >
+              <a
+                href="#"
+                class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-300 text-sm font-medium transition-colors duration-200"
+                >GitHub</a
+              >
+            </div>
           </div>
+        </div>
 
-          <!-- Item 3 -->
-          <div
-            class="bg-white dark:bg-gray-800 shadow p-4 rounded-lg transition-colors duration-300 hover:shadow-lg">
+        <!-- Project 2 -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300">
+          <div class="relative overflow-hidden">
             <div
-              class="h-40 bg-gray-300 dark:bg-gray-600 rounded mb-3 transition-colors duration-300"></div>
-            <h3 class="font-semibold text-lg dark:text-white">
-              Project Title 3
-            </h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
-              Short description of the project goes here.
-            </p>
+              class="h-48 bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
+              <span class="text-white text-4xl">📱</span>
+            </div>
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
           </div>
-
-          <!-- Item 4 -->
-          <div
-            class="bg-white dark:bg-gray-800 shadow p-4 rounded-lg transition-colors duration-300 hover:shadow-lg">
-            <div
-              class="h-40 bg-gray-300 dark:bg-gray-600 rounded mb-3 transition-colors duration-300"></div>
-            <h3 class="font-semibold text-lg dark:text-white">
-              Project Title 4
-            </h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
-              Short description of the project goes here.
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-bold text-xl dark:text-white">
+                Fitness Tracker App
+              </h3>
+              <span
+                class="text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded-full"
+                >Mobile</span
+              >
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+              Cross-platform mobile application for tracking workouts,
+              nutrition, and fitness goals.
             </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded"
+                >React Native</span
+              >
+              <span
+                class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded"
+                >Firebase</span
+              >
+              <span
+                class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded"
+                >Redux</span
+              >
+            </div>
+            <div class="flex space-x-3">
+              <a
+                href="#"
+                class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 text-sm font-medium transition-colors duration-200"
+                >App Store</a
+              >
+              <a
+                href="#"
+                class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-300 text-sm font-medium transition-colors duration-200"
+                >GitHub</a
+              >
+            </div>
           </div>
+        </div>
 
-          <!-- Item 5 -->
-          <div
-            class="bg-white dark:bg-gray-800 shadow p-4 rounded-lg transition-colors duration-300 hover:shadow-lg">
+        <!-- Project 3 -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300">
+          <div class="relative overflow-hidden">
             <div
-              class="h-40 bg-gray-300 dark:bg-gray-600 rounded mb-3 transition-colors duration-300"></div>
-            <h3 class="font-semibold text-lg dark:text-white">
-              Project Title 5
-            </h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
-              Short description of the project goes here.
-            </p>
+              class="h-48 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
+              <span class="text-white text-4xl">🎨</span>
+            </div>
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
           </div>
-
-          <!-- Item 6 -->
-          <div
-            class="bg-white dark:bg-gray-800 shadow p-4 rounded-lg transition-colors duration-300 hover:shadow-lg">
-            <div
-              class="h-40 bg-gray-300 dark:bg-gray-600 rounded mb-3 transition-colors duration-300"></div>
-            <h3 class="font-semibold text-lg dark:text-white">
-              Project Title 6
-            </h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
-              Short description of the project goes here.
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-bold text-xl dark:text-white">Design System</h3>
+              <span
+                class="text-xs bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded-full"
+                >UI/UX</span
+              >
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+              Comprehensive design system with reusable components, patterns,
+              and design guidelines.
             </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded"
+                >Figma</span
+              >
+              <span
+                class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded"
+                >Storybook</span
+              >
+              <span
+                class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded"
+                >CSS</span
+              >
+            </div>
+            <div class="flex space-x-3">
+              <a
+                href="#"
+                class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 text-sm font-medium transition-colors duration-200"
+                >View Prototype</a
+              >
+              <a
+                href="#"
+                class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-300 text-sm font-medium transition-colors duration-200"
+                >Case Study</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300">
+          <div class="relative overflow-hidden">
+            <div
+              class="h-48 bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
+              <span class="text-white text-4xl">🚀</span>
+            </div>
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-bold text-xl dark:text-white">SaaS Dashboard</h3>
+              <span
+                class="text-xs bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-2 py-1 rounded-full"
+                >Web App</span
+              >
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+              Analytics dashboard for SaaS products with real-time data
+              visualization and reporting.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded"
+                >Vue.js</span
+              >
+              <span
+                class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded"
+                >D3.js</span
+              >
+              <span
+                class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded"
+                >PostgreSQL</span
+              >
+            </div>
+            <div class="flex space-x-3">
+              <a
+                href="#"
+                class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 text-sm font-medium transition-colors duration-200"
+                >Live Demo</a
+              >
+              <a
+                href="#"
+                class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-300 text-sm font-medium transition-colors duration-200"
+                >GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300">
+          <div class="relative overflow-hidden">
+            <div
+              class="h-48 bg-gradient-to-br from-teal-500 to-blue-600 flex items-center justify-center">
+              <span class="text-white text-4xl">🛒</span>
+            </div>
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-bold text-xl dark:text-white">Marketplace App</h3>
+              <span
+                class="text-xs bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 px-2 py-1 rounded-full"
+                >Full Stack</span
+              >
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+              Multi-vendor marketplace with user authentication, payment
+              processing, and admin panel.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded"
+                >Next.js</span
+              >
+              <span
+                class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded"
+                >Stripe</span
+              >
+              <span
+                class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded"
+                >Redis</span
+              >
+            </div>
+            <div class="flex space-x-3">
+              <a
+                href="#"
+                class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 text-sm font-medium transition-colors duration-200"
+                >Live Demo</a
+              >
+              <a
+                href="#"
+                class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-300 text-sm font-medium transition-colors duration-200"
+                >Case Study</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300">
+          <div class="relative overflow-hidden">
+            <div
+              class="h-48 bg-gradient-to-br from-indigo-500 to-blue-400 flex items-center justify-center">
+              <span class="text-white text-4xl">📊</span>
+            </div>
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300"></div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-bold text-xl dark:text-white">Data Analytics</h3>
+              <span
+                class="text-xs bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 px-2 py-1 rounded-full"
+                >Backend</span
+              >
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+              Big data processing pipeline with machine learning integration and
+              predictive analytics.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded"
+                >Python</span
+              >
+              <span
+                class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded"
+                >Apache Spark</span
+              >
+              <span
+                class="text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 px-2 py-1 rounded"
+                >AWS</span
+              >
+            </div>
+            <div class="flex space-x-3">
+              <a
+                href="#"
+                class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 text-sm font-medium transition-colors duration-200"
+                >Documentation</a
+              >
+              <a
+                href="#"
+                class="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-300 text-sm font-medium transition-colors duration-200"
+                >GitHub</a
+              >
+            </div>
           </div>
         </div>
       </section>
-    </main>
 
-    <hr class="border-gray-300 dark:border-gray-700" />
+      <!-- Call to Action -->
+      <section
+        class="text-center bg-gradient-to-r from-blue-600 to-purple-700 dark:from-blue-800 dark:to-purple-900 rounded-2xl p-8 sm:p-12 text-white">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-4">
+          Ready to Start Your Project?
+        </h2>
+        <p class="text-lg opacity-90 mb-6 max-w-2xl mx-auto">
+          Let's work together to bring your ideas to life with innovative
+          solutions and cutting-edge technology.
+        </p>
+        <a
+          href="message.html"
+          class="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200">
+          Get In Touch
+        </a>
+      </section>
+    </main>
 
     <!-- FOOTER -->
     <footer
       class="bg-white dark:bg-gray-800 p-4 text-center shadow mt-10 transition-colors duration-300">
-      <p class="text-sm dark:text-gray-300">© 2025 My Portfolio Website</p>
+      <p class="text-sm dark:text-gray-300">
+        © 2025 My Portfolio Website. All rights reserved.
+      </p>
     </footer>
 
     <!-- JS External -->

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Message Us</title>
+    <title>Message Us - MyPortfolio</title>
 
     <!-- Tailwind Output -->
     <link rel="stylesheet" href="dist/output.css" />
@@ -16,9 +16,30 @@
     <nav
       class="bg-white dark:bg-gray-800 shadow p-4 fixed top-0 left-0 w-full z-50 transition-colors duration-300">
       <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <h1 class="text-xl font-bold dark:text-white">MyPortfolio</h1>
+        <h1 class="text-lg md:text-xl font-bold dark:text-white">
+          MyPortfolio
+        </h1>
 
-        <div class="flex items-center space-x-6 font-medium">
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobileMenuButton"
+          class="md:hidden p-2 text-gray-600 dark:text-gray-300">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+
+        <!-- Desktop Navigation -->
+        <div
+          class="hidden md:flex items-center space-x-4 lg:space-x-6 font-medium">
           <a
             href="index.html"
             class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
@@ -40,9 +61,46 @@
             >Message Us</a
           >
 
-          <!-- DARK MODE TOGGLE BUTTON - CLEAN VERSION -->
+          <!-- Dark Mode Toggle -->
           <button
             id="themeToggle"
+            class="p-2 text-xl hover:scale-110 transition-transform duration-200">
+            🌙
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <div
+        id="mobileMenu"
+        class="md:hidden hidden mt-4 space-y-3 bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+        <a
+          href="index.html"
+          class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+          >Home</a
+        >
+        <a
+          href="profile.html"
+          class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+          >Our Profile</a
+        >
+        <a
+          href="portofolio.html"
+          class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+          >Portfolio</a
+        >
+        <a
+          href="message.html"
+          class="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+          >Message Us</a
+        >
+
+        <!-- Mobile Dark Mode Toggle -->
+        <div
+          class="flex items-center justify-between pt-2 border-t border-gray-200 dark:border-gray-700">
+          <span class="text-gray-600 dark:text-gray-300">Dark Mode</span>
+          <button
+            id="themeToggleMobile"
             class="p-2 text-xl hover:scale-110 transition-transform duration-200">
             🌙
           </button>
@@ -53,87 +111,299 @@
     <!-- Spacer so content isn't hidden behind fixed navbar -->
     <div class="h-20"></div>
 
-    <hr class="border-gray-300 dark:border-gray-700" />
+    <!-- MAIN CONTENT -->
+    <main class="p-4 sm:p-6 space-y-10 sm:space-y-12 max-w-4xl mx-auto">
+      <!-- Header Section -->
+      <section class="text-center">
+        <h1 class="text-3xl sm:text-4xl font-bold dark:text-white mb-4">
+          Get In Touch
+        </h1>
+        <p
+          class="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          Have a project in mind or want to collaborate? Send me a message and
+          I'll get back to you as soon as possible.
+        </p>
+      </section>
 
-    <!-- Main Content -->
-    <main class="p-6 space-y-10 max-w-xl mx-auto">
-      <h2 class="text-2xl font-bold text-center dark:text-white">Message Us</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12">
+        <!-- Contact Information -->
+        <div class="lg:col-span-1 space-y-6 sm:space-y-8">
+          <div
+            class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 sm:p-8 transition-colors duration-300">
+            <h2 class="text-2xl font-bold dark:text-white mb-6">
+              Contact Info
+            </h2>
 
-      <!-- Form Section -->
-      <form
-        id="messageForm"
-        class="space-y-4 bg-white dark:bg-gray-800 p-6 rounded-lg shadow transition-colors duration-300">
-        <!-- Name -->
-        <div>
-          <label class="block mb-1 font-medium dark:text-gray-200">Name</label>
-          <input
-            type="text"
-            id="name"
-            class="w-full border border-gray-300 dark:border-gray-600 rounded p-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-200 transition-colors duration-300"
-            placeholder="Enter your name" />
-          <p id="name-error" class="text-red-500 text-sm hidden mt-1">
-            Name is required.
-          </p>
+            <div class="space-y-6">
+              <!-- Email -->
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span class="text-blue-600 dark:text-blue-400 text-xl"
+                    >✉️</span
+                  >
+                </div>
+                <div>
+                  <h3 class="font-semibold dark:text-white mb-1">Email</h3>
+                  <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    hello@myportfolio.com
+                  </p>
+                  <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    Typically replies within 24 hours
+                  </p>
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span class="text-green-600 dark:text-green-400 text-xl"
+                    >📞</span
+                  >
+                </div>
+                <div>
+                  <h3 class="font-semibold dark:text-white mb-1">Phone</h3>
+                  <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    +1 (555) 123-4567
+                  </p>
+                  <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    Mon-Fri from 9am to 6pm
+                  </p>
+                </div>
+              </div>
+
+              <!-- Location -->
+              <div class="flex items-start space-x-4">
+                <div
+                  class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span class="text-purple-600 dark:text-purple-400 text-xl"
+                    >📍</span
+                  >
+                </div>
+                <div>
+                  <h3 class="font-semibold dark:text-white mb-1">Location</h3>
+                  <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    New York, NY
+                  </p>
+                  <p class="text-gray-600 dark:text-gray-400 text-sm">
+                    Available for remote work worldwide
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+              <h3 class="font-semibold dark:text-white mb-4">
+                Connect With Me
+              </h3>
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors duration-200">
+                  <span
+                    class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+                    >📘</span
+                  >
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors duration-200">
+                  <span
+                    class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+                    >🐦</span
+                  >
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors duration-200">
+                  <span
+                    class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+                    >💼</span
+                  >
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors duration-200">
+                  <span
+                    class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"
+                    >📷</span
+                  >
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Email -->
-        <div>
-          <label class="block mb-1 font-medium dark:text-gray-200">Email</label>
-          <input
-            type="email"
-            id="email"
-            class="w-full border border-gray-300 dark:border-gray-600 rounded p-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-200 transition-colors duration-300"
-            placeholder="Enter your email" />
-          <p id="email-error" class="text-red-500 text-sm hidden mt-1">
-            Valid email is required.
-          </p>
+        <!-- Contact Form -->
+        <div class="lg:col-span-2">
+          <div
+            class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 sm:p-8 transition-colors duration-300">
+            <h2 class="text-2xl font-bold dark:text-white mb-2">
+              Send a Message
+            </h2>
+            <p class="text-gray-600 dark:text-gray-400 mb-6">
+              Fill out the form below and I'll get back to you soon.
+            </p>
+
+            <form id="messageForm" class="space-y-6">
+              <!-- Name -->
+              <div>
+                <label
+                  for="name"
+                  class="block text-sm font-medium dark:text-gray-200 mb-2"
+                  >Full Name *</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                  placeholder="Enter your full name" />
+                <p id="name-error" class="text-red-500 text-sm mt-2 hidden">
+                  Please enter your name.
+                </p>
+              </div>
+
+              <!-- Email -->
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium dark:text-gray-200 mb-2"
+                  >Email Address *</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                  placeholder="Enter your email address" />
+                <p id="email-error" class="text-red-500 text-sm mt-2 hidden">
+                  Please enter a valid email address.
+                </p>
+              </div>
+
+              <!-- Message -->
+              <div>
+                <label
+                  for="message"
+                  class="block text-sm font-medium dark:text-gray-200 mb-2"
+                  >Your Message *</label
+                >
+                <textarea
+                  id="message"
+                  rows="5"
+                  class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-200 placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
+                  placeholder="Tell me about your project or inquiry..."></textarea>
+                <p id="message-error" class="text-red-500 text-sm mt-2 hidden">
+                  Please enter your message.
+                </p>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900">
+                Send Message
+              </button>
+            </form>
+
+            <!-- Success Message -->
+            <div
+              id="submittedData"
+              class="mt-6 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl p-6 hidden transition-all duration-300">
+              <div class="flex items-start space-x-3">
+                <div
+                  class="w-10 h-10 bg-green-100 dark:bg-green-800 rounded-full flex items-center justify-center flex-shrink-0">
+                  <span class="text-green-600 dark:text-green-400 text-lg"
+                    >✓</span
+                  >
+                </div>
+                <div>
+                  <h3
+                    class="font-semibold text-green-800 dark:text-green-300 mb-2">
+                    Message Sent Successfully!
+                  </h3>
+                  <div class="space-y-2 text-green-700 dark:text-green-400">
+                    <p>
+                      <strong>Name:</strong>
+                      <span id="outputName" class="font-medium"></span>
+                    </p>
+                    <p>
+                      <strong>Email:</strong>
+                      <span id="outputEmail" class="font-medium"></span>
+                    </p>
+                    <p>
+                      <strong>Message:</strong>
+                      <span id="outputMessage" class="font-medium"></span>
+                    </p>
+                  </div>
+                  <p class="text-sm text-green-600 dark:text-green-500 mt-3">
+                    Thank you for your message! I'll get back to you within 24
+                    hours.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <!-- Message -->
-        <div>
-          <label class="block mb-1 font-medium dark:text-gray-200"
-            >Message</label
-          >
-          <textarea
-            id="message"
-            class="w-full border border-gray-300 dark:border-gray-600 rounded p-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-200 transition-colors duration-300"
-            rows="4"
-            placeholder="Write your message"></textarea>
-          <p id="message-error" class="text-red-500 text-sm hidden mt-1">
-            Message cannot be empty.
-          </p>
-        </div>
-
-        <button
-          type="submit"
-          class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-300 w-full">
-          Submit
-        </button>
-      </form>
-
-      <!-- Display Submitted Data -->
-      <div
-        id="submittedData"
-        class="bg-green-50 dark:bg-green-900/20 p-4 rounded border border-green-300 dark:border-green-600 hidden transition-colors duration-300">
-        <h3 class="font-semibold mb-2 dark:text-green-300">Form Submitted:</h3>
-        <p class="dark:text-gray-300">
-          <strong>Name:</strong> <span id="outputName"></span>
-        </p>
-        <p class="dark:text-gray-300">
-          <strong>Email:</strong> <span id="outputEmail"></span>
-        </p>
-        <p class="dark:text-gray-300">
-          <strong>Message:</strong> <span id="outputMessage"></span>
-        </p>
       </div>
-    </main>
 
-    <hr class="border-gray-300 dark:border-gray-700" />
+      <!-- FAQ Section -->
+      <section
+        class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 sm:p-8 transition-colors duration-300">
+        <h2 class="text-2xl font-bold dark:text-white mb-6 text-center">
+          Frequently Asked Questions
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <div class="border-l-4 border-blue-500 pl-4">
+              <h3 class="font-semibold dark:text-white mb-2">
+                How long does a typical project take?
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm">
+                Project timelines vary based on complexity, but most websites
+                take 2-6 weeks from start to finish.
+              </p>
+            </div>
+            <div class="border-l-4 border-green-500 pl-4">
+              <h3 class="font-semibold dark:text-white mb-2">
+                Do you offer ongoing support?
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm">
+                Yes, I offer maintenance and support packages to keep your
+                project running smoothly.
+              </p>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div class="border-l-4 border-purple-500 pl-4">
+              <h3 class="font-semibold dark:text-white mb-2">
+                What's your pricing structure?
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm">
+                I offer project-based pricing and hourly rates. Contact me for a
+                detailed quote.
+              </p>
+            </div>
+            <div class="border-l-4 border-orange-500 pl-4">
+              <h3 class="font-semibold dark:text-white mb-2">
+                Do you work with international clients?
+              </h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm">
+                Absolutely! I work with clients worldwide and am experienced in
+                remote collaboration.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- FOOTER -->
     <footer
       class="bg-white dark:bg-gray-800 p-4 text-center shadow mt-10 transition-colors duration-300">
-      <p class="text-sm dark:text-gray-300">© 2025 My Portfolio Website</p>
+      <p class="text-sm dark:text-gray-300">
+        © 2025 My Portfolio Website. All rights reserved.
+      </p>
     </footer>
 
     <!-- JS External -->

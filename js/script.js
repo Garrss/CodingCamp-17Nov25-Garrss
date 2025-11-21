@@ -49,41 +49,77 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // =============================== DARK MODE TOGGLE ===============================
+  // =============================== DARK MODE & MOBILE MENU ===============================
   const themeToggle = document.getElementById("themeToggle");
-  const htmlElement = document.documentElement;
+  const themeToggleMobile = document.getElementById("themeToggleMobile");
+  const mobileMenuButton = document.getElementById("mobileMenuButton");
+  const mobileMenu = document.getElementById("mobileMenu");
 
+  // Deklarasi fungsi di scope yang tepat
+  const updateAllToggleButtons = () => {
+    const isDark = document.documentElement.classList.contains("dark");
+    const toggleText = isDark ? "☀️" : "🌙";
+
+    if (themeToggle) themeToggle.textContent = toggleText;
+    if (themeToggleMobile) themeToggleMobile.textContent = toggleText;
+  };
+
+  const initTheme = () => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      document.documentElement.classList.toggle("dark", savedTheme === "dark");
+    } else {
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      document.documentElement.classList.toggle("dark", prefersDark);
+    }
+    updateAllToggleButtons();
+  };
+
+  const toggleTheme = () => {
+    document.documentElement.classList.toggle("dark");
+    const isDark = document.documentElement.classList.contains("dark");
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+    updateAllToggleButtons();
+  };
+
+  // Initialize theme pertama kali
+  initTheme();
+
+  // Event listeners untuk theme toggles
   if (themeToggle) {
-    // Check saved theme or system preference
-    function initTheme() {
-      const savedTheme = localStorage.getItem("theme");
-      if (savedTheme) {
-        htmlElement.classList.toggle("dark", savedTheme === "dark");
-      } else {
-        const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)"
-        ).matches;
-        htmlElement.classList.toggle("dark", prefersDark);
-      }
-      updateToggleButton();
-    }
+    themeToggle.addEventListener("click", toggleTheme);
+  }
 
-    // Update button emoji based on theme
-    function updateToggleButton() {
-      themeToggle.textContent = htmlElement.classList.contains("dark")
-        ? "☀️"
-        : "🌙";
-    }
+  if (themeToggleMobile) {
+    themeToggleMobile.addEventListener("click", toggleTheme);
+  }
 
-    // Toggle theme on button click
-    themeToggle.addEventListener("click", () => {
-      htmlElement.classList.toggle("dark");
-      const isDark = htmlElement.classList.contains("dark");
-      localStorage.setItem("theme", isDark ? "dark" : "light");
-      updateToggleButton();
+  // Mobile menu toggle
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener("click", (e) => {
+      e.stopPropagation(); // Prevent event bubbling
+      mobileMenu.classList.toggle("hidden");
     });
 
-    // Initialize theme on page load
-    initTheme();
+    // Close mobile menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (
+        mobileMenu &&
+        !mobileMenu.contains(e.target) &&
+        !mobileMenuButton.contains(e.target)
+      ) {
+        mobileMenu.classList.add("hidden");
+      }
+    });
+
+    // Close mobile menu when clicking on links
+    const mobileLinks = mobileMenu.querySelectorAll("a");
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
   }
 });
