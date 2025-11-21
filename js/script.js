@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileMenuButton = document.getElementById("mobileMenuButton");
   const mobileMenu = document.getElementById("mobileMenu");
 
-  // Deklarasi fungsi di scope yang tepat
+  // Declaration of functions
   const updateAllToggleButtons = () => {
     const isDark = document.documentElement.classList.contains("dark");
     const toggleText = isDark ? "☀️" : "🌙";
@@ -84,10 +84,10 @@ document.addEventListener("DOMContentLoaded", () => {
     updateAllToggleButtons();
   };
 
-  // Initialize theme pertama kali
+  // Initialize theme on page load
   initTheme();
 
-  // Event listeners untuk theme toggles
+  // Event listeners for theme toggles
   if (themeToggle) {
     themeToggle.addEventListener("click", toggleTheme);
   }
