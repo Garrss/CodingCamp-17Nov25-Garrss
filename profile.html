@@ -5,24 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Profile</title>
 
-    <!-- CSS External -->
+    <!-- Tailwind Output -->
+    <link rel="stylesheet" href="dist/output.css" />
     <link rel="stylesheet" href="css/style.css" />
-
-    <!-- Tailwind Build Output -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
 
-  <body class="bg-gray-50 text-gray-900">
+  <body
+    class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
     <!-- NAVBAR -->
-    <nav class="bg-white shadow p-4 fixed top-0 left-0 w-full z-50">
+    <nav
+      class="bg-white dark:bg-gray-800 shadow p-4 fixed top-0 left-0 w-full z-50 transition-colors duration-300">
       <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <h1 class="text-xl font-bold">MyPortfolio</h1>
+        <h1 class="text-xl font-bold dark:text-white">MyPortfolio</h1>
 
-        <div class="space-x-6 font-medium">
-          <a href="index.html" class="hover:text-blue-600">Home</a>
-          <a href="profile.html" class="hover:text-blue-600">Our Profile</a>
-          <a href="portofolio.html" class="hover:text-blue-600">Portfolio</a>
-          <a href="message.html" class="hover:text-blue-600">Message Us</a>
+        <div class="flex items-center space-x-6 font-medium">
+          <a
+            href="index.html"
+            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+            >Home</a
+          >
+          <a
+            href="profile.html"
+            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+            >Our Profile</a
+          >
+          <a
+            href="portofolio.html"
+            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+            >Portfolio</a
+          >
+          <a
+            href="message.html"
+            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+            >Message Us</a
+          >
+
+          <!-- DARK MODE TOGGLE BUTTON - CLEAN VERSION -->
+          <button
+            id="themeToggle"
+            class="p-2 text-xl hover:scale-110 transition-transform duration-200">
+            🌙
+          </button>
         </div>
       </div>
     </nav>
@@ -30,52 +53,92 @@
     <!-- Spacer so content isn't hidden behind fixed navbar -->
     <div class="h-20"></div>
 
-    <hr />
+    <hr class="border-gray-300 dark:border-gray-700" />
 
     <!-- MAIN CONTENT -->
-    <main class="p-6 space-y-10">
+    <main class="p-6 space-y-10 max-w-4xl mx-auto">
       <!-- Banner Photo -->
       <section
         id="banner"
-        class="w-full h-60 bg-gray-300 flex items-center justify-center rounded">
-        <h2 class="text-2xl font-bold">Company Banner</h2>
+        class="w-full h-60 bg-gray-300 dark:bg-gray-700 flex items-center justify-center rounded transition-colors duration-300">
+        <h2 class="text-2xl font-bold dark:text-white">Company Banner</h2>
       </section>
 
-      <hr />
+      <hr class="border-gray-300 dark:border-gray-700" />
 
       <!-- About the Company -->
       <section id="about-company" class="space-y-4">
-        <h3 class="text-xl font-semibold">About Our Company</h3>
-        <p>
+        <h3 class="text-xl font-semibold dark:text-white">About Our Company</h3>
+        <p class="dark:text-gray-300 leading-relaxed">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae
           arcu ut nunc tincidunt tristique quis non lorem. Phasellus sit amet
           dui nec erat cursus placerat.
         </p>
       </section>
 
-      <hr />
+      <hr class="border-gray-300 dark:border-gray-700" />
 
       <!-- Vision & Mission -->
       <section id="vision-mission" class="space-y-4">
-        <h3 class="text-xl font-semibold">Vision & Mission</h3>
+        <h3 class="text-xl font-semibold dark:text-white">Vision & Mission</h3>
 
-        <p>
-          <strong>Vision:</strong> To be a leading company in delivering quality
-          solutions globally.
+        <p class="dark:text-gray-300">
+          <strong class="dark:text-white">Vision:</strong> To be a leading
+          company in delivering quality solutions globally.
         </p>
 
-        <p><strong>Mission:</strong></p>
-        <ul class="list-disc pl-6">
+        <p class="dark:text-gray-300">
+          <strong class="dark:text-white">Mission:</strong>
+        </p>
+        <ul class="list-disc pl-6 space-y-2 dark:text-gray-300">
           <li>Provide high-quality and innovative services.</li>
           <li>Ensure customer satisfaction in every project.</li>
           <li>Grow sustainably with integrity and professionalism.</li>
         </ul>
       </section>
+
+      <!-- Company Values -->
+      <section id="company-values" class="space-y-4">
+        <h3 class="text-xl font-semibold dark:text-white">Our Values</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div
+            class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow transition-colors duration-300">
+            <h4 class="font-semibold dark:text-white mb-2">Innovation</h4>
+            <p class="text-sm dark:text-gray-300">
+              We constantly seek new and better ways to solve problems.
+            </p>
+          </div>
+          <div
+            class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow transition-colors duration-300">
+            <h4 class="font-semibold dark:text-white mb-2">Quality</h4>
+            <p class="text-sm dark:text-gray-300">
+              We deliver excellence in every project we undertake.
+            </p>
+          </div>
+          <div
+            class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow transition-colors duration-300">
+            <h4 class="font-semibold dark:text-white mb-2">Integrity</h4>
+            <p class="text-sm dark:text-gray-300">
+              We conduct business with honesty and transparency.
+            </p>
+          </div>
+          <div
+            class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow transition-colors duration-300">
+            <h4 class="font-semibold dark:text-white mb-2">Teamwork</h4>
+            <p class="text-sm dark:text-gray-300">
+              We collaborate to achieve common goals and success.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
 
+    <hr class="border-gray-300 dark:border-gray-700" />
+
     <!-- FOOTER -->
-    <footer class="bg-white p-4 text-center shadow mt-10">
-      <p class="text-sm">© 2025 My Portfolio Website</p>
+    <footer
+      class="bg-white dark:bg-gray-800 p-4 text-center shadow mt-10 transition-colors duration-300">
+      <p class="text-sm dark:text-gray-300">© 2025 My Portfolio Website</p>
     </footer>
 
     <!-- JS External -->

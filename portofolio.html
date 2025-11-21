@@ -3,26 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Profile</title>
+    <title>Portfolio</title>
 
-    <!-- CSS External -->
+    <!-- Tailwind Output -->
+    <link rel="stylesheet" href="dist/output.css" />
     <link rel="stylesheet" href="css/style.css" />
-
-    <!-- Tailwind Build Output -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
 
-  <body class="bg-gray-50 text-gray-900">
+  <body
+    class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300">
     <!-- NAVBAR -->
-    <nav class="bg-white shadow p-4 fixed top-0 left-0 w-full z-50">
+    <nav
+      class="bg-white dark:bg-gray-800 shadow p-4 fixed top-0 left-0 w-full z-50 transition-colors duration-300">
       <div class="max-w-6xl mx-auto flex justify-between items-center">
-        <h1 class="text-xl font-bold">MyPortfolio</h1>
+        <h1 class="text-xl font-bold dark:text-white">MyPortfolio</h1>
 
-        <div class="space-x-6 font-medium">
-          <a href="index.html" class="hover:text-blue-600">Home</a>
-          <a href="profile.html" class="hover:text-blue-600">Our Profile</a>
-          <a href="portofolio.html" class="hover:text-blue-600">Portfolio</a>
-          <a href="message.html" class="hover:text-blue-600">Message Us</a>
+        <div class="flex items-center space-x-6 font-medium">
+          <a
+            href="index.html"
+            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+            >Home</a
+          >
+          <a
+            href="profile.html"
+            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+            >Our Profile</a
+          >
+          <a
+            href="portofolio.html"
+            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+            >Portfolio</a
+          >
+          <a
+            href="message.html"
+            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+            >Message Us</a
+          >
+
+          <!-- DARK MODE TOGGLE BUTTON - CLEAN VERSION -->
+          <button
+            id="themeToggle"
+            class="p-2 text-xl hover:scale-110 transition-transform duration-200">
+            🌙
+          </button>
         </div>
       </div>
     </nav>
@@ -30,38 +53,91 @@
     <!-- Spacer so content isn't hidden behind fixed navbar -->
     <div class="h-20"></div>
 
-    <hr />
+    <hr class="border-gray-300 dark:border-gray-700" />
 
     <!-- Main Content -->
-    <main class="p-6 space-y-10">
+    <main class="p-6 space-y-10 max-w-6xl mx-auto">
       <section id="portfolio-section" class="space-y-6">
-        <h2 class="text-2xl font-bold text-center mb-6">My Portfolio</h2>
+        <h2 class="text-2xl font-bold text-center mb-6 dark:text-white">
+          My Portfolio
+        </h2>
 
         <!-- Portfolio Grid -->
         <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           <!-- Item 1 -->
-          <div class="bg-white shadow p-4 rounded-lg">
-            <div class="h-40 bg-gray-300 rounded mb-3"></div>
-            <h3 class="font-semibold text-lg">Project Title 1</h3>
-            <p class="text-sm text-gray-600">
+          <div
+            class="bg-white dark:bg-gray-800 shadow p-4 rounded-lg transition-colors duration-300 hover:shadow-lg">
+            <div
+              class="h-40 bg-gray-300 dark:bg-gray-600 rounded mb-3 transition-colors duration-300"></div>
+            <h3 class="font-semibold text-lg dark:text-white">
+              Project Title 1
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
               Short description of the project goes here.
             </p>
           </div>
 
           <!-- Item 2 -->
-          <div class="bg-white shadow p-4 rounded-lg">
-            <div class="h-40 bg-gray-300 rounded mb-3"></div>
-            <h3 class="font-semibold text-lg">Project Title 2</h3>
-            <p class="text-sm text-gray-600">
+          <div
+            class="bg-white dark:bg-gray-800 shadow p-4 rounded-lg transition-colors duration-300 hover:shadow-lg">
+            <div
+              class="h-40 bg-gray-300 dark:bg-gray-600 rounded mb-3 transition-colors duration-300"></div>
+            <h3 class="font-semibold text-lg dark:text-white">
+              Project Title 2
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
               Short description of the project goes here.
             </p>
           </div>
 
           <!-- Item 3 -->
-          <div class="bg-white shadow p-4 rounded-lg">
-            <div class="h-40 bg-gray-300 rounded mb-3"></div>
-            <h3 class="font-semibold text-lg">Project Title 3</h3>
-            <p class="text-sm text-gray-600">
+          <div
+            class="bg-white dark:bg-gray-800 shadow p-4 rounded-lg transition-colors duration-300 hover:shadow-lg">
+            <div
+              class="h-40 bg-gray-300 dark:bg-gray-600 rounded mb-3 transition-colors duration-300"></div>
+            <h3 class="font-semibold text-lg dark:text-white">
+              Project Title 3
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+              Short description of the project goes here.
+            </p>
+          </div>
+
+          <!-- Item 4 -->
+          <div
+            class="bg-white dark:bg-gray-800 shadow p-4 rounded-lg transition-colors duration-300 hover:shadow-lg">
+            <div
+              class="h-40 bg-gray-300 dark:bg-gray-600 rounded mb-3 transition-colors duration-300"></div>
+            <h3 class="font-semibold text-lg dark:text-white">
+              Project Title 4
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+              Short description of the project goes here.
+            </p>
+          </div>
+
+          <!-- Item 5 -->
+          <div
+            class="bg-white dark:bg-gray-800 shadow p-4 rounded-lg transition-colors duration-300 hover:shadow-lg">
+            <div
+              class="h-40 bg-gray-300 dark:bg-gray-600 rounded mb-3 transition-colors duration-300"></div>
+            <h3 class="font-semibold text-lg dark:text-white">
+              Project Title 5
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+              Short description of the project goes here.
+            </p>
+          </div>
+
+          <!-- Item 6 -->
+          <div
+            class="bg-white dark:bg-gray-800 shadow p-4 rounded-lg transition-colors duration-300 hover:shadow-lg">
+            <div
+              class="h-40 bg-gray-300 dark:bg-gray-600 rounded mb-3 transition-colors duration-300"></div>
+            <h3 class="font-semibold text-lg dark:text-white">
+              Project Title 6
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
               Short description of the project goes here.
             </p>
           </div>
@@ -69,11 +145,12 @@
       </section>
     </main>
 
-    <hr />
+    <hr class="border-gray-300 dark:border-gray-700" />
 
     <!-- FOOTER -->
-    <footer class="bg-white p-4 text-center shadow mt-10">
-      <p class="text-sm">© 2025 My Portfolio Website</p>
+    <footer
+      class="bg-white dark:bg-gray-800 p-4 text-center shadow mt-10 transition-colors duration-300">
+      <p class="text-sm dark:text-gray-300">© 2025 My Portfolio Website</p>
     </footer>
 
     <!-- JS External -->

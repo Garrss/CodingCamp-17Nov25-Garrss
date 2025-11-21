@@ -68,11 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
       updateToggleButton();
     }
 
-    // Update button text based on theme
+    // Update button emoji based on theme
     function updateToggleButton() {
       themeToggle.textContent = htmlElement.classList.contains("dark")
-        ? "🌙"
-        : "☀️";
+        ? "☀️"
+        : "🌙";
     }
 
     // Toggle theme on button click
